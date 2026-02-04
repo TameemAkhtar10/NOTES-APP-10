@@ -29,14 +29,14 @@ const App = () => {
   }
   async function submitdelete(noteid) {
     console.log(noteid)
-    let data = await axios.delete(`https://notes-app-10-rq7b.onrender.com/notes/main/${noteid}`)
+    let data = await axios.delete(`https://notes-app-10-rq7b.onrender.com/api/notes/main/${noteid}`)
     console.log(data)
     getData();
 
   }
   async function handleupdate(id) {
     let content = prompt('enter your content')
-   await axios.patch(`http://localhost:3000/api/notes/main/${id}`, {
+   await axios.patch(`https://notes-app-10-rq7b.onrender.com/api/notes/main/${id}`, {
     content :content
 });
   getData()
