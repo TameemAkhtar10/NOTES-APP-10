@@ -6,7 +6,7 @@ const App = () => {
   const [secondinput, setsecondinput] = useState('')
   const [notes, setNotes] = useState([]);
   const getData = async () => {
-    const res = await axios.get("http://localhost:3000/api/notes/main");
+    const res = await axios.get("https://notes-app-10-rq7b.onrender.com/api/notes/main");
     setNotes(res.data.notes);
 
   };
@@ -15,7 +15,7 @@ const App = () => {
 
     console.log(maininput, secondinput)
 
-    let data = await axios.post('http://localhost:3000/api/notes/main', {
+    let data = await axios.post('https://notes-app-10-rq7b.onrender.com/api/notes/main', {
       title: maininput,
       content: secondinput
     })
@@ -29,7 +29,7 @@ const App = () => {
   }
   async function submitdelete(noteid) {
     console.log(noteid)
-    let data = await axios.delete(`http://localhost:3000/api/notes/main/${noteid}`)
+    let data = await axios.delete(`https://notes-app-10-rq7b.onrender.com/notes/main/${noteid}`)
     console.log(data)
     getData();
 
